@@ -25,24 +25,24 @@ run_tests:
 deploy_staging:
   stage: deploy
   script:
-    - git remote add heroku https://heroku:$HEROKU_API_KEY@git.heroku.com/text-giving-staging.git
+    - git remote add heroku https://heroku:$HEROKU_API_KEY@git.heroku.com/cryptic-atoll-22545
     - git push heroku master
     - echo "Deployed to staging server"
   environment:
   name: staging
-  url: https://text-giving-staging.herokuapp.com/
+  url: https://cryptic-atoll-22545.herokuapp.com/
   only:
     - master
 
 deploy_production:
   stage: deploy
   script:
-    - git remote add heroku https://heroku:$HEROKU_API_KEY@git.heroku.com/text-giving.git
+    - git remote add heroku https://heroku:$HEROKU_API_KEY@git.heroku.com/cryptic-atoll-22545
     - git push heroku master
     - echo "Deployed to production server"
   environment:
   name: production
-  url: https://text-giving.herokuapp.com/
+  url: https://cryptic-atoll-22545.herokuapp.com/
   when: manual
   only:
     - master
